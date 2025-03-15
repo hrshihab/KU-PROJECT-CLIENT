@@ -21,7 +21,7 @@ const NewsCard = ({ news }: NewsCardProps) => {
         </div>
         <div className='p-4'>
           <h3 className='text-xl font-semibold mb-2 line-clamp-2'>{news.title}</h3>
-          <p className='text-gray-600 text-sm mb-4 line-clamp-3'>{news.description}</p>
+          <p className='text-gray-600 text-sm mb-4 line-clamp-3'>{news.description.slice(0, 75)}...</p>
           <div className='flex justify-between items-center text-sm text-gray-500'>
             <span>{new Date(news.createdAt).toLocaleDateString()}</span>
             <span>{news.createdBy}</span>

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FiUpload, FiSend } from 'react-icons/fi';
+import { FiSend } from 'react-icons/fi';
 import { useCreateSupportTicketMutation } from '@/redux/api/baseApi';
 
 // Add interface for form data
@@ -15,48 +15,35 @@ interface ISupportForm {
   mobileNumber: string;
   category: string;
   problemDescription: string;
+  attachmentUrl: string;
 }
 
 const SupportPage = () => {
   const [createSupportTicket] = useCreateSupportTicketMutation();
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ISupportForm>();
 
   const onSubmit = async (data: ISupportForm) => {
     try {
-      console.log("Form Data:", data); // Debug log
-
-      let attachmentUrl = '';
-      if (selectedFile) {
-        // Implement your file upload logic here
-        // attachmentUrl = await uploadFile(selectedFile);
-        console.log("Selected File:", selectedFile); // Debug log
-      }
-
       const formData = {
         ...data,
-        attachmentUrl,
         status: 'PENDING'
       };
 
-      console.log("Final Form Data:", formData); // Debug log
+      console.log("Final form data:", formData);
 
       const response = await createSupportTicket(formData).unwrap();
-      console.log("API Response:", response); // Debug log
-
       reset();
-      setSelectedFile(null);
-      alert('Support ticket submitted successfully!'); // Temporary success message
+      alert('Support ticket submitted successfully!');
     } catch (error) {
-      console.error('Error submitting support ticket:', error);
-      alert('Failed to submit support ticket. Please try again.'); // Temporary error message
+      console.error('Error:', error);
+      alert('Failed to submit support ticket. Please try again.');
     }
   };
 
   // Add error handler
   const onError = (errors: any) => {
-    console.log('Form Errors:', errors); // Debug log
+    console.log('Form Errors:', errors); 
   };
 
   return (
@@ -214,28 +201,15 @@ const SupportPage = () => {
 
         {/* File Attachment */}
         <div className="mt-6">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Attachment (if any)</label>
-          <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
-            <div className="space-y-1 text-center">
-              <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
-              <div className="flex text-sm text-gray-600">
-                <label className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500">
-                  <span>Upload a file</span>
-                  <input
-                    type="file"
-                    className="sr-only"
-                    onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
-                  />
-                </label>
-                <p className="pl-1">or drag and drop</p>
-              </div>
-              <p className="text-xs text-gray-500">PNG, JPG, PDF up to 10MB</p>
-            </div>
-          </div>
-          {selectedFile && (
-            <p className="text-sm text-green-600 mt-2">
-              Selected file: {selectedFile.name}
-            </p>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Attachment URL (if any)</label>
+          <input
+            type="url"
+            {...register('attachmentUrl')}
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Enter attachment URL (optional)"
+          />
+          {errors.attachmentUrl && (
+            <p className="text-red-500 text-sm mt-1">{errors.attachmentUrl.message}</p>
           )}
         </div>
 

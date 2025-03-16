@@ -8,19 +8,19 @@ interface NewsDetailsProps {
 }
 
 const NewsDetails = ({ news }: NewsDetailsProps) => {
-    return (
+  return (
         <div className='max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden'>
             {/* Hero Image Section */}
             <div className='relative h-[400px] w-full'>
-                <Image
+          <Image
                     src={news.imageUrl || '/fallback-news-image.jpg'}
                     alt={news.title}
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className='object-cover'
-                />
-            </div>
+          />
+        </div>
             
             {/* Content Section */}
             <div className='p-8'>
@@ -58,7 +58,7 @@ const NewsDetails = ({ news }: NewsDetailsProps) => {
                             })}</span>
                         </div>
                     )}
-                </div>
+      </div>
 
                 {/* Title */}
                 <h1 className='text-3xl font-bold mb-6 text-gray-900'>
@@ -68,8 +68,8 @@ const NewsDetails = ({ news }: NewsDetailsProps) => {
                 {/* Description */}
                 <div className='prose max-w-none mb-8'>
                     <p className='text-lg text-gray-700 leading-relaxed'>
-                        {news.description}
-                    </p>
+          {news.description}
+        </p>
                 </div>
 
                 {/* Additional Details */}
@@ -124,9 +124,9 @@ const NewsDetails = ({ news }: NewsDetailsProps) => {
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default NewsDetails;

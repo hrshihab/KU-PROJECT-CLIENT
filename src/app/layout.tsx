@@ -10,7 +10,7 @@ import Navbar from "@/components/shared/Navbar";
 // Initialize the Poppins font with the weights you need
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-poppins',
   display: 'swap',
 })
@@ -33,11 +33,11 @@ export default function RootLayout({
 }>) {
   return (
   <Providers>
-      <html lang="en" data-theme="light" className={poppins.variable}>
-      <body className={roboto.className} font-poppins>
+      <html lang="en" data-theme="light" className={`${poppins.variable} ${roboto.className}`}>
+      <body className={`${poppins.className}`}>
         <Navbar />
         <main className="pt-16 sm:pt-20 lg:pt-24">
-          <Header />
+          
           <div className="min-h-screen">{children}</div>
         </main>
         <Footer />

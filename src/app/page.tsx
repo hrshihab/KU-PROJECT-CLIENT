@@ -3,7 +3,7 @@ import Banner from "@/components/shared/Banner";
 import Label from "@/components/shared/Label";
 import Vc from "@/components/shared/Vc";
 const HomePage = async () => {
-  const res = await fetch('https://ku-project-server.vercel.app/api/v1/news',{
+  const res = await fetch('https://ku-server-eta.vercel.app/api/v1/news',{
     next:{
       revalidate:30
     }

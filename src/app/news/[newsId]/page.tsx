@@ -10,7 +10,7 @@ interface IParamsId {
 
 export const generateStaticParams = async () => {
     try {
-        const res = await fetch('https://ku-project-server.vercel.app/api/v1/news', {
+        const res = await fetch('https://ku-server-eta.vercel.app/api/v1/news', {
             next: {
                 revalidate: 3600
             }
@@ -30,7 +30,7 @@ export const generateStaticParams = async () => {
 
 const NewsDetailsPage = async ({ params }: IParamsId) => {
     try {
-        const res = await fetch(`https://ku-project-server.vercel.app/api/v1/news/${params.newsId}`, {
+        const res = await fetch(`https://ku-server-eta.vercel.app/api/v1/news/${params.newsId}`, {
             cache: "no-store"
         });
         const response = await res.json();

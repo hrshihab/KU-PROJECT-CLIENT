@@ -3,7 +3,7 @@
 import { INews } from "@/app/news/page"
 
 export const createBlog = async(data:INews)=>{
-    const res =await fetch(`https://ku-project-server.vercel.app/api/v1/news/create-news`,{
+    const res =await fetch(`https://ku-server-eta.vercel.app/api/v1/news/create-news`,{
         method:'POST',
         headers: {
             "Content-Type": "application/json"

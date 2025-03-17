@@ -10,7 +10,7 @@ interface IParamsId {
 
 export const generateStaticParams = async () => {
     try {
-        const res = await fetch('https://ku-project-server.vercel.app/api/v1', {
+        const res = await fetch('https://ku-project-server.vercel.app/api/v1/news', {
             next: {
                 revalidate: 3600
             }
@@ -34,6 +34,7 @@ const NewsDetailsPage = async ({ params }: IParamsId) => {
             cache: "no-store"
         });
         const response = await res.json();
+       // console.log(response);
         
         // Access the news data from the response structure
         const news = response?.data;

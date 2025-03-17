@@ -8,25 +8,25 @@ interface IParamsId {
     }
 }
 
-export const generateStaticParams = async () => {
-    try {
-        const res = await fetch('https://ku-server-eta.vercel.app/api/v1/news', {
-            next: {
-                revalidate: 3600
-            }
-        });
-        const response = await res.json();
-        // Access the data array from the response
-        const newsItems = response?.data || [];
+// export const generateStaticParams = async () => {
+//     try {
+//         const res = await fetch('https://ku-server-eta.vercel.app/api/v1/news', {
+//             next: {
+//                 revalidate: 3600
+//             }
+//         });
+//         const response = await res.json();
+//         // Access the data array from the response
+//         const newsItems = response?.data || [];
         
-        return newsItems.slice(0, 3).map((news: INews) => ({
-            newsId: news.id.toString()
-        }));
-    } catch (error) {
-        console.error('Error generating static params:', error);
-        return [];
-    }
-}
+//         return newsItems.slice(0, 3).map((news: INews) => ({
+//             newsId: news.id.toString()
+//         }));
+//     } catch (error) {
+//         console.error('Error generating static params:', error);
+//         return [];
+//     }
+// }
 
 const NewsDetailsPage = async ({ params }: IParamsId) => {
     try {

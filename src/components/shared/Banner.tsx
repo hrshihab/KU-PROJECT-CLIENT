@@ -6,7 +6,7 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({ className }) => {
   return (
-    <div className="relative min-h-[600px] h-screen w-full -mt-16 sm:-mt-20 lg:-mt-24">
+    <div className="relative min-h-[600px] h-screen w-full -mt-16 sm:-mt-20 lg:-mt-24 ">
       {/* Background Image - Full Screen */}
       <div className="absolute inset-0 w-full h-screen">
         <Image
@@ -35,25 +35,26 @@ const Banner: React.FC<BannerProps> = ({ className }) => {
 
         {/* Hero Content */}
         <div className="absolute top-1/2 -translate-y-1/2 w-full md:w-5/6 left-1/2 -translate-x-1/2 ">
-          <div className="max-w-[1920px] mx-auto px-6">
+          <div className="max-w-[1920px] mx-auto px-6 ">
             {/* Hero Title */}
-            <h1 className="text-white font-poppins font-bold 
+            <h1 className="text-white font-poppins font-bold backdrop-blur-[1px] rounded-full
               text-5xl sm:text-5xl md:text-6xl  xl:text-7xl 2xl:text-8xl 3xl:text-9xl
               leading-tight tracking-tight
               text-center md:text-left
-              drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">
+              drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
               University for<br />
               Tomorrow
             </h1>
 
             {/* Hero Subtext */}
-            <p className="mt-4 text-white font-poppins font-light 
-              text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl  2xl:text-3xl 
+            <p className="mt-4 text-white font-poppins backdrop-blur-[2px] rounded-full px-2
+              text-md sm:text-lg md:text-xl lg:text-2xl xl:text-2xl  2xl:text-3xl 
               leading-relaxed 
               max-w-[360px] lg:max-w-[480px] xl:max-w-[440px]
               mx-auto md:mx-0 
+              drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]
               text-center md:text-left
-              drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">
+              ">
               We build superheroes who build the nation. Welcome to Khulna University!
             </p>
           </div>
@@ -63,30 +64,30 @@ const Banner: React.FC<BannerProps> = ({ className }) => {
         <div className="absolute bottom-0 md:w-5/6 w-full left-1/2 -translate-x-1/2">
           <div className="grid grid-cols-4 max-w-[1920px] mx-auto">
             {/* Teachers */}
-            <div className="px-6 py-8 text-center text-white border-2 border-white/50 border-b-0
+            <div className="px-6 py-8 text-center flex flex-col items-center justify-center text-white border-2 border-white/50 border-b-0
                 hover:bg-white/10 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Teachers</h3>
+              <h3 className="text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Teachers</h3>
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">200+</p>
             </div>
 
             {/* Students */}
-            <div className="px-6 py-8 text-center text-white border-2 border-white/50 border-b-0 border-l-0
+            <div className="px-6 py-8 text-center flex flex-col items-center justify-center text-white border-2 border-white/50 border-b-0 border-l-0
                 hover:bg-white/10 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Students</h3>
+              <h3 className="text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Students</h3>
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">2M+</p>
             </div>
 
             {/* Research */}
-            <div className="px-6 py-8 text-center text-white border-2 border-white/50 border-b-0 border-l-0
+            <div className="px-6 py-8 text-center flex flex-col items-center justify-center text-white border-2 border-white/50 border-b-0 border-l-0
                 hover:bg-white/10 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Research</h3>
+              <h3 className="text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Research</h3>
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">1200+</p>
             </div>
 
             {/* Awards */}
-            <div className="px-6 py-8 text-center text-white border-2 border-white/50 border-b-0 border-l-0
+            <div className="px-6 py-8 text-center flex flex-col items-center justify-center text-white border-2 border-white/50 border-b-0 border-l-0
                 hover:bg-white/10 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Awards</h3>
+              <h3 className="text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4">Awards</h3>
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl">165</p>
             </div>
           </div>

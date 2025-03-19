@@ -49,11 +49,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><Link href="/academics" className="hover:text-blue-400 transition-colors">Academics</Link></li>
-              <li><Link href="/admission" className="hover:text-blue-400 transition-colors">Admission</Link></li>
-              <li><Link href="/research" className="hover:text-blue-400 transition-colors">Research</Link></li>
-              <li><Link href="/campus-life" className="hover:text-blue-400 transition-colors">Campus Life</Link></li>
+              <li><span className="hover:text-blue-400 transition-colors">About Us</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Academics</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Admission</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Research</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Campus Life</span></li>
             </ul>
           </div>
 
@@ -61,11 +61,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Resources</h3>
             <ul className="space-y-4">
-              <li><Link href="/library" className="hover:text-blue-400 transition-colors">Library</Link></li>
-              <li><Link href="/publications" className="hover:text-blue-400 transition-colors">Publications</Link></li>
-              <li><Link href="/career-services" className="hover:text-blue-400 transition-colors">Career Services</Link></li>
-              <li><Link href="/alumni" className="hover:text-blue-400 transition-colors">Alumni</Link></li>
-              <li><Link href="/events" className="hover:text-blue-400 transition-colors">Events</Link></li>
+              <li><span className="hover:text-blue-400 transition-colors">Library</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Publications</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Career Services</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Alumni</span></li>
+              <li><span className="hover:text-blue-400 transition-colors">Events</span></li>
             </ul>
           </div>
 
@@ -105,9 +105,9 @@ const Footer = () => {
               © {new Date().getFullYear()} Khulna University. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
-              <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+              <span className="hover:text-white transition-colors">Privacy Policy</span>
+              <span className="hover:text-white transition-colors">Terms of Use</span>
+              <span className="hover:text-white transition-colors">Sitemap</span>
             </div>
           </div>
         </div>
